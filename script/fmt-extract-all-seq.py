@@ -196,8 +196,9 @@ for line in sys.stdin :
             ostr += ' tot_length=' + str(total_length)
             ostr += '\n'
             if not x[2] or not sid or not x[3] or not x[4] or not x[5]:
-                sys.stderr.write(ostr)
-                print(x, file=sys.stderr)
+                pass
+                #sys.stderr.write(ostr)
+                #print(x, file=sys.stderr)
                 #sys.stdout.write(buf)
                 #exit(-1)
             else :
