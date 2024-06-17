@@ -85,8 +85,8 @@ Immuannot-bt depends on:
 * minimap2 (2.27-r1193) 
 * seqtk (1.4-r130-dirty)
 
-All source codes and pre-build binaries can be found in folder 'dep-tools', 
-if any pre-build binary does work, you may need to re-build it
+All source codes and pre-build binaries can be found in folder 'dep-tools'. 
+If any pre-build binary does work, you may need to re-build it from the source
 and copy it to the folder 'dep-tools/bin'.
 
 [\[top\]](#content)
