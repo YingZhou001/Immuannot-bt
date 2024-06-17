@@ -9,7 +9,7 @@ events from HiFi reads.
 
 A manuscript is in preparing.
 
-Last update date : 6/11/2024
+Last update date : 6/17/2024
 
 Content
 --------
@@ -23,13 +23,19 @@ Content
 - [Limitation](#limitation)
 - [Todo list](#todo-list)
 
-[\[top\]](#content)
-
 # Detection Strategy
 
 The major difficulty for annotating V, D, and J coding regions from whole genome
-assembly is the short length of these genes especially for the D regions (~10-20 bp) 
-and the J regions (~50bp).
+assembly is the short sizes of those genes, especially for the D coding region which is about ~10-20bp. 
+One solution is to perform basepair-to-basepair alignment to the restricted region (
+extracted from whole genome seqeunce), together with careful evaluation including the flanking sequences
+to get the most reliable annotation on those coding segments.[1]
+The other way is to extend the coding seqeunces with flanking RSS regions so
+that extra ~50-200bp will be added which directly increases the alignment
+specitivity.
+Immuannot-bt employs the second way, by generating the V,D,J reference
+sequences from IMGT/LIGM-DB, it can achieve high efficiency and accuracy at the
+same time when annotating human assembly.
 
 | Segment | Length | +flanking area |
 | --- | --- | --- |
@@ -37,15 +43,10 @@ and the J regions (~50bp).
 | D | ~10-20bp | ~80bp |
 | J | ~50bp | ~100bp |
 
-One solution is to perform alignment to the restricted region that extracted
-from whole genome seqeunce, together with careful evaluation to get the most
-reliable annotation on those coding segments.[1]
-The other way is to extend the coding seqeunces with flanking RSS regions so
-that extra ~50-200bp will be added which directly increases the alignment
-specitivity.
-Immuannot-bt employs the second way, by generating the V,D,J reference
-sequences from IMGT/LIGM-DB, it can achieve high efficiency and accuracy at the
-same time when annotating human assembly.
+For long reads data, we use TRUST4's annotator to resolve the CDR3 sequences. [2]
+
+[1] Lees, W.D., Saha, S., Yaari, G. and Watson, C.T., 2024. Digger: directed annotation of immunoglobulin and T cell receptor V, D, and J gene sequences and assemblies. Bioinformatics, 40(3), p.btae144. \
+[2] Song, L., Cohen, D., Ouyang, Z., Cao, Y., Hu, X. and Liu, X.S., 2021. TRUST4: immune repertoire reconstruction from bulk and single-cell RNA-seq data. Nature methods, 18(6), pp.627-630.
 
 [\[top\]](#content)
 
@@ -80,7 +81,7 @@ bash ${scriptdir}/fmt.sh ${dat} ${refpref}
 
 Immuannot-bt depends on:
 
-* TRUST4 [2]
+* TRUST4
 * minimap2 (2.27-r1193) 
 * seqtk (1.4-r130-dirty)
 
@@ -125,7 +126,3 @@ time bash ${scriptdir}/immuannot-bt.sh -r ${reads} -d ${refdir} -o ${outpref} -t
 
 [\[top\]](#content)
 
-# Reference
-
-[1] Lees, W.D., Saha, S., Yaari, G. and Watson, C.T., 2024. Digger: directed annotation of immunoglobulin and T cell receptor V, D, and J gene sequences and assemblies. Bioinformatics, 40(3), p.btae144.
-[2] Song, L., Cohen, D., Ouyang, Z., Cao, Y., Hu, X. and Liu, X.S., 2021. TRUST4: immune repertoire reconstruction from bulk and single-cell RNA-seq data. Nature methods, 18(6), pp.627-630.
