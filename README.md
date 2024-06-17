@@ -18,7 +18,7 @@ Content
 - [Installation](#installation)
     - [Download](#download)
     - [Dependency](#dependency)
-- [Input and Output](#inputs-and-outputs)
+- [Input and Output](#input-and-output)
 - [An Example](#an-example)
 - [Limitation](#limitation)
 - [Todo list](#todo-list)
