@@ -93,7 +93,7 @@ and copy it to the folder 'dep-tools/bin'.
 
 # Input and output
 
-Immuannot-bt takes fasta or fastq format as input, and generate a gff file for
+Immuannot-bt takes fasta or fastq format as input, and generates a gff file for
 assembly-based annotation and a csv file in [AIRR format](https://docs.airr-community.org/en/v1.3.1/datarep/rearrangements.html#) for picking up V(D)J recombination from reads.
 
 [\[top\]](#content)
