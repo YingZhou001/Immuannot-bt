@@ -71,6 +71,7 @@ wget https://ftp.ebi.ac.uk/pub/databases/imgt/ligm/imgt.dat.Z
 ```bash
 scriptdir=Immuannot-bt/script
 refpref=ref-imgt
+dat=imgt.dat.Z
 bash ${scriptdir}/fmt.sh ${dat} ${refpref}
 ## reference will be outputing into a folder named as ${refpref}.${date}
 ```
