@@ -225,7 +225,7 @@ for line in sys.stdin :
                 attr.append('warning "'+msg+'"')
             attr.append('seq "'+sel_seq+'"')
             ret_rec.append([ctg, source, tag, fro, to, 
-                            '.', strand, frame, ' ; '.join(attr)])
+                            '.', strand, frame, '; '.join(attr)])
     if gene_name[3] == 'V' : 
         ret_rec = check_v_region(ret_rec)
     ostr = ''
